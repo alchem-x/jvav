@@ -9,7 +9,7 @@ public abstract class UnsafeUtils {
 
     static {
         try {
-            Field theUnsafe = Unsafe.class.getDeclaredField("theUnsafe");
+            var theUnsafe = Unsafe.class.getDeclaredField("theUnsafe");
             theUnsafe.setAccessible(true);
             UNSAFE = (Unsafe) theUnsafe.get(null);
         } catch (IllegalAccessException | NoSuchFieldException | SecurityException e) {
